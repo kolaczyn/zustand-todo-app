@@ -6,10 +6,16 @@ import { useTodoListStore } from "../src/store/todoList";
 
 const Todos = () => {
   const todos = useTodoListStore((state) => state.todos);
+  const toggleTopTodo = useTodoListStore((state) => state.toggleTopTodo);
+  const topTodoId = useTodoListStore((state) => state.topTodoId);
   return (
     <ol>
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.message}</li>
+        <li key={todo.id}>
+          <span>{todo.message}</span>
+          <button onClick={() => toggleTopTodo(todo.id)}>clicky</button>
+          {topTodoId === todo.id && <span>👈 Top todo</span>}
+        </li>
       ))}
     </ol>
   );
