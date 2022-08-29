@@ -1,7 +1,7 @@
 import React from "react";
-import { useBearStore } from "./store/counter";
+import { useBearStore } from "../src/store/counter";
 
-export const HomePage = () => {
+const HomePage = () => {
   const bears = useBearStore((state) => state.bears);
   const increasePopulation = useBearStore((state) => state.increasePopulation);
   const removeAllBears = useBearStore((state) => state.removeAllBears);
@@ -17,3 +17,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;
