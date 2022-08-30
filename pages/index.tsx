@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 
 import Link from "next/link";
 import { useRef } from "react";
+import { CustomAppShell } from "../src/layout/CustomAppShell";
 import { useTodoListStore } from "../src/store/todoList";
 
 const Todos = () => {
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
     });
   };
   return (
-    <div>
+    <CustomAppShell>
       <Link href="/example">
         <a>Example</a>
       </Link>
@@ -40,7 +41,7 @@ const Home: NextPage = () => {
       <Button>Hello world</Button>
       <input ref={ref} />
       <button onClick={handleAddTodo}>Add Todo</button>
-    </div>
+    </CustomAppShell>
   );
 };
 

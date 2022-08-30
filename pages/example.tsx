@@ -1,4 +1,5 @@
 import React from "react";
+import { CustomAppShell } from "../src/layout/CustomAppShell";
 import { useBearStore } from "../src/store/counter";
 
 const HomePage = () => {
@@ -8,13 +9,13 @@ const HomePage = () => {
   const removeNBears = useBearStore((state) => state.removeNBears);
 
   return (
-    <div>
+    <CustomAppShell>
       <div>bears: {bears}</div>
       <button onClick={increasePopulation}>Increase population</button>
       <button onClick={removeAllBears}>Remove all</button>
       <button onClick={() => removeNBears(5)}>remove 5 bears</button>
       <button onClick={() => removeNBears(-9)}>add 9 bears</button>
-    </div>
+    </CustomAppShell>
   );
 };
 
