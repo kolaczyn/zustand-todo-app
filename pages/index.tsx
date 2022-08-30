@@ -1,3 +1,4 @@
+import { Button } from "@mantine/core";
 import type { NextPage } from "next";
 
 import Link from "next/link";
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
         <a>Example</a>
       </Link>
       <Todos />
+      <Button>Hello world</Button>
       <input ref={ref} />
       <button onClick={handleAddTodo}>Add Todo</button>
     </div>
